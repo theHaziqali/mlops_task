@@ -25,12 +25,9 @@ pipeline {
             bat 'echo Image mlops_a2 Already Removed'
           }
           bat 'echo bingo!'
-          bat 'docker build -t mlops_a2 .'
-          bat 'docker login -u talal02 -p T123456??'
-          bat 'docker tag mlops_a2 talal02/mlops_a2'
-          bat 'docker push talal02/mlops_a2'
+          bat 'docker build -t flaskapp .'
           echo 'Running docker image'
-          bat 'docker run --name mlops_a2 -p 8000:5000 mlops_a2'
+          bat 'docker run -p 3003:3003 -d flaskapp'
         }
       }
     }
