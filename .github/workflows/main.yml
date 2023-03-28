@@ -3,15 +3,16 @@
 name: CI
 on:
   pull_request:
-    branches: [main]
+    branches: [main, Haziq,feedback]
     types: [closed]
   push:
-    branches: [main, Haziq]
+    branches: [main, Haziq,feedback]
 
 
 jobs:
   build:
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true || github.event.push==true
+    
     runs-on: ubuntu-latest
 
     steps:
@@ -23,9 +24,6 @@ jobs:
       with:
         python-version: 3.8.16
 
-    - name: Install dependencies
-      run: |
-        make install
     - name: Code formatting
       run: |
         make format
