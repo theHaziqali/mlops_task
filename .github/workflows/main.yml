@@ -24,9 +24,6 @@ jobs:
       with:
         python-version: 3.8.16
 
-    - name: Install dependencies
-      run: |
-        make install
     - name: Code formatting
       run: |
         make format
