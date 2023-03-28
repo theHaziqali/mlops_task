@@ -24,10 +24,10 @@ jobs:
       with:
         python-version: 3.8.16
 
-    - name: Code formatting
+    - name: Install dependencies
       run: |
-        make format
-    - name: Linting
+        make install
+    - name: Lint
       run: |
         make lint
     - name: Create Pull Request
