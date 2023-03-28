@@ -3,7 +3,7 @@
 name: CI
 on:
   pull_request:
-    branches: [main]
+    branches: [main, Haziq,feedback]
     types: [closed]
   push:
     branches: [main, Haziq,feedback]
